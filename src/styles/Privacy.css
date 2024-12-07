@@ -1,0 +1,99 @@
+/* General Privacy Policy Styles */
+body {
+  background-color: #1a1a1a; /* Jet Black */
+  font-family: "Roboto", Arial, sans-serif;
+  color: #ffffff; /* Pure White for readability */
+}
+
+.privacy-policy {
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #dcdcdc; /* Gainsboro for a subtle card background */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.policy-item {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #9966cc; /* Amethyst for accents */
+  padding-bottom: 10px;
+}
+
+.policy-item:last-child {
+  border-bottom: none;
+}
+
+/* Title Styling */
+.policy-title {
+  cursor: pointer;
+  margin: 0;
+  padding: 15px;
+  background-color: #4169e1; /* Royal Blue for primary elements */
+  color: #ffffff; /* Pure White for text contrast */
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.policy-title:hover {
+  background-color: #9966cc; /* Amethyst for hover effect */
+  transform: scale(1.02);
+}
+
+.policy-title i {
+  margin-right: 10px;
+  color: #00ffff; /* Jet Black for icon contrast */
+}
+
+/* Content Styling */
+.policy-content {
+  margin-top: 10px;
+  padding: 15px;
+  border: 2px solid #9966cc; /* Amethyst for border */
+  border-radius: 6px;
+  background-color: #1a1a1a; /* Jet Black for content background */
+  color: #dcdcdc; /* Gainsboro for text contrast */
+  line-height: 1.5;
+  display: none; /* Initially hidden */
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.policy-content a {
+  color: #00ffff;
+}
+
+.policy-content a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Icon Glow Effect */
+.policy-title i:hover {
+  color: #00ffff; /* Neon Cyan for glow effect */
+  text-shadow: 0 0 8px #00ffff;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .privacy-policy {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .policy-title {
+    font-size: 1em;
+  }
+}
