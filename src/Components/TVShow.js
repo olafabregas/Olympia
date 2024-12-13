@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Navbar from "./Navbar";
-import Footer from "../Footer";
-import "../Movies.css";
+import Footer from "./Footer";
+import "../styles/Movies.css";
 import { useNavigate } from "react-router-dom";
 
 const API_KEY = "97229d56808eecfa5517eb9f89929803";

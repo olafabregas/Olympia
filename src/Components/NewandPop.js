@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "../styles/NewandPop.css";
 import Navbar from "./Navbar";
-import Footer from "../Footer";
+import Footer from "./Footer";
 
 const NewPop = () => {
   // State variables to store data
@@ -71,95 +71,93 @@ const NewPop = () => {
   }
 
   return (
-
     <>
+      <Navbar />
+      <div className="app-container">
+        <h1>New & Popular Shows and Movies</h1>
 
-    <Navbar />
-    <div className="app-container">
-      <h1>New & Popular Shows and Movies</h1>
+        <h2>Latest Movies</h2>
+        <div className="card-container">
+          {/* Map through latestMovies and display each one */}
+          {latestMovies.map((movie) => (
+            <div key={movie.id} className="card">
+              <img
+                src={
+                  movie.poster_path
+                    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                    : "/placeholder.jpg"
+                }
+                alt={movie.title}
+                className="card-image"
+              />
+              <h3>{movie.title}</h3>
+              <p>Release Date: {movie.release_date || "N/A"}</p>
+            </div>
+          ))}
+        </div>
 
-      <h2>Latest Movies</h2>
-      <div className="card-container">
-        {/* Map through latestMovies and display each one */}
-        {latestMovies.map((movie) => (
-          <div key={movie.id} className="card">
-            <img
-              src={
-                movie.poster_path
-                  ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                  : "/placeholder.jpg"
-              }
-              alt={movie.title}
-              className="card-image"
-            />
-            <h3>{movie.title}</h3>
-            <p>Release Date: {movie.release_date || "N/A"}</p>
-          </div>
-        ))}
+        <h2>Popular Movies</h2>
+        <div className="card-container">
+          {/* Map through popularMovies and display each one */}
+          {popularMovies.map((movie) => (
+            <div key={movie.id} className="card">
+              <img
+                src={
+                  movie.poster_path
+                    ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                    : "/placeholder.jpg"
+                }
+                alt={movie.title}
+                className="card-image"
+              />
+              <h3>{movie.title}</h3>
+              <p>Release Date: {movie.release_date || "N/A"}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2>Latest TV Shows</h2>
+        <div className="card-container">
+          {/* Map through latestTvShows and display each one */}
+          {latestTvShows.map((show) => (
+            <div key={show.id} className="card">
+              <img
+                src={
+                  show.poster_path
+                    ? `https://image.tmdb.org/t/p/w500${show.poster_path}`
+                    : "/placeholder.jpg"
+                }
+                alt={show.name}
+                className="card-image"
+              />
+              <h3>{show.name}</h3>
+              <p>First Air Date: {show.first_air_date || "N/A"}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2>Popular TV Shows</h2>
+        <div className="card-container">
+          {/* Map through popularTvShows and display each one */}
+          {popularTvShows.map((show) => (
+            <div key={show.id} className="card">
+              <img
+                src={
+                  show.poster_path
+                    ? `https://image.tmdb.org/t/p/w500${show.poster_path}`
+                    : "/placeholder.jpg"
+                }
+                alt={show.name}
+                className="card-image"
+              />
+              <h3>{show.name}</h3>
+              <p>First Air Date: {show.first_air_date || "N/A"}</p>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <h2>Popular Movies</h2>
-      <div className="card-container">
-        {/* Map through popularMovies and display each one */}
-        {popularMovies.map((movie) => (
-          <div key={movie.id} className="card">
-            <img
-              src={
-                movie.poster_path
-                  ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
-                  : "/placeholder.jpg"
-              }
-              alt={movie.title}
-              className="card-image"
-            />
-            <h3>{movie.title}</h3>
-            <p>Release Date: {movie.release_date || "N/A"}</p>
-          </div>
-        ))}
-      </div>
-
-      <h2>Latest TV Shows</h2>
-      <div className="card-container">
-        {/* Map through latestTvShows and display each one */}
-        {latestTvShows.map((show) => (
-          <div key={show.id} className="card">
-            <img
-              src={
-                show.poster_path
-                  ? `https://image.tmdb.org/t/p/w500${show.poster_path}`
-                  : "/placeholder.jpg"
-              }
-              alt={show.name}
-              className="card-image"
-            />
-            <h3>{show.name}</h3>
-            <p>First Air Date: {show.first_air_date || "N/A"}</p>
-          </div>
-        ))}
-      </div>
-
-      <h2>Popular TV Shows</h2>
-      <div className="card-container">
-        {/* Map through popularTvShows and display each one */}
-        {popularTvShows.map((show) => (
-          <div key={show.id} className="card">
-            <img
-              src={
-                show.poster_path
-                  ? `https://image.tmdb.org/t/p/w500${show.poster_path}`
-                  : "/placeholder.jpg"
-              }
-              alt={show.name}
-              className="card-image"
-            />
-            <h3>{show.name}</h3>
-            <p>First Air Date: {show.first_air_date || "N/A"}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-    
-    <Footer />
+      <Footer />
     </>
   );
 };

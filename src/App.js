@@ -9,14 +9,11 @@ import Trailer from "./Components/Trailer";
 import TVShow from "./Components/TVShow";
 import NewPop from "./Components/NewandPop";
 import PrivacyPolicyPage from "./Components/Privacy";
-import SignUp from "./Components/SignUp";
 import ThankYou from "./Components/Tfeedback";
-import TSignup from "./Components/TSignup";
-import Footer from "./Footer";
-import Login from "./Components/Login";
+import Footer from "./Components/Footer";
 import FAQPage from "./Components/FAQ";
 import FeedbackForm from "./Components/Feedback";
-import MoviePage from "./MoviePage";
+import MoviePage from "./Components/MoviePage";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "@fortawesome/react-fontawesome";
 import "slick-carousel/slick/slick.css";
@@ -35,10 +32,7 @@ const App = () => {
         <Route path="/tv-show" element={<TVShow />} />
         <Route path="/new-and-pop" element={<NewPop />} />
         <Route path="/feedback" element={<FeedbackForm />} />
-        <Route path="/t-signup" element={<TSignup />} />
         <Route path="/tv-show" element={<TVShow />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
         <Route path="/t-feedback" element={<ThankYou />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />

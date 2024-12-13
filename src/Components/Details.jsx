@@ -6,7 +6,7 @@ import movie from "../Assets/movie.png";
 import { auth } from "../Components/firebase/setup";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Footer from "../Footer";
+import Footer from "./Footer";
 
 const Details = () => {
   const navigate = useNavigate();

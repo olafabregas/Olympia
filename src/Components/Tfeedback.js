@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "./Navbar"; // Ensure consistency with your site
-import Footer from "../Footer"; // Import Footer for consistency
-import "../styles/ThankYou.css"; // Create this CSS file for styling
+import Navbar from "./Navbar";
+import Footer from "./Footer";
+import "../styles/ThankYou.css";
 
 const ThankYou = () => {
   return (

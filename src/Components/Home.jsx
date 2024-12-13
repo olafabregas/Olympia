@@ -3,21 +3,30 @@ import { Carousel } from "react-responsive-carousel";
 import Navbar from "./Navbar";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Category from "./Category";
-import Footer from "../Footer";
+import Footer from "./Footer";
 import axios from "axios";
-import SearchBar from "../SearchBar";
+import SearchBar from "./SearchBar";
 import "../styles/Home.css";
 
 const API_KEY = "97229d56808eecfa5517eb9f89929803";
 const API_URL = "https://api.themoviedb.org/3";
 
 const categories = [
-  { id: 28, name: "Action" },
-  { id: 35, name: "Comedy" },
-  { id: 27, name: "Horror" },
-  { id: 53, name: "Thriller" },
-  { id: 10749, name: "Romance" },
-  { id: 99, name: "Documentary" },
+  { id: 28, name: "Action", endpoint: "/discover/movie?with_genres=28" },
+  { id: 16, name: "Anime", endpoint: "/discover/movie?with_genres=16" },
+  { id: 35, name: "Comedy", endpoint: "/discover/movie?with_genres=35" },
+  { id: 10751, name: "Kids", endpoint: "/discover/movie?with_genres=10751" },
+  { id: 18, name: "Drama", endpoint: "/discover/movie?with_genres=18" },
+  { id: 14, name: "Fantasy", endpoint: "/discover/movie?with_genres=14" },
+  { id: 27, name: "Horror", endpoint: "/discover/movie?with_genres=27" },
+  { id: 53, name: "Thriller", endpoint: "/discover/movie?with_genres=53" },
+  { id: 10749, name: "Romance", endpoint: "/discover/movie?with_genres=10749" },
+  {
+    id: 878,
+    name: "Science Fiction",
+    endpoint: "/discover/movie?with_genres=878",
+  },
+  { id: 99, name: "Documentary", endpoint: "/discover/movie?with_genres=99" },
 ];
 
 const Home = () => {
@@ -31,17 +40,25 @@ const Home = () => {
 
   const fetchMoviesByCategory = async () => {
     const moviesData = {};
+    const resultsPerCategory = 20; // Adjust this to increase results displayed per category
+    const pagesToFetch = Math.ceil(resultsPerCategory / 20); // Each TMDB page has 20 results
+
     for (let category of categories) {
       try {
-        const response = await axios.get(
-          `${API_URL}/discover/movie?api_key=${API_KEY}&with_genres=${category.id}`
-        );
-        moviesData[category.name] = response.data.results || [];
+        let movies = [];
+        for (let page = 1; page <= pagesToFetch; page++) {
+          const response = await axios.get(
+            `${API_URL}${category.endpoint}&api_key=${API_KEY}&page=${page}`
+          );
+          movies = [...movies, ...(response.data.results || [])];
+        }
+        moviesData[category.name] = movies;
       } catch (error) {
         console.error(`Error fetching ${category.name} movies:`, error);
-        moviesData[category.name] = []; // Handle failure by returning an empty list
+        moviesData[category.name] = [];
       }
     }
+    
     setMoviesByCategory(moviesData);
   };
 

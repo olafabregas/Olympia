@@ -4,7 +4,7 @@ body {
   font-family: Arial, sans-serif;
   color: #333;
   background-color: #1a1a1a;
-  background-image: url("../public/cine1.jpeg");
+  background-image: url("../Assets/cine1.jpeg");
   background-size: cover;
   background-attachment: fixed;
   margin-top: 15v;

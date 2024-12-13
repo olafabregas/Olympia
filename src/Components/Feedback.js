@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/Feedback.css";
+import "../styles/ThankYou.css";
 import Navbar from "./Navbar";
-import Footer from "../Footer";
+import Footer from "./Footer";
 
 // This component handles the feedback form
 function FeedbackForm() {

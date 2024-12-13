@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import NavBar from "../Components/Navbar";
 import privacyPolicyData from "../Data/PrivacyData";
 import "../styles/Privacy.css";
-import Footer from "../Footer";
+import Footer from "./Footer";
 // Import FontAwesome resources
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";

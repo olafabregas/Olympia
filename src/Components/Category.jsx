@@ -1,6 +1,10 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../styles/Category.css";
+
+const API_URL = "https://api.themoviedb.org/3";
+const API_KEY = "your_api_key";
 
 const Category = ({ category, movies }) => {
   const navigate = useNavigate();
