@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-image: url("C:\Desktop\OLYMPIA\olympia-app\public\cine1.jpeg");
+  background-size: cover;
+  background-attachment: fixed;
+  margin-top: 15vh;
+}
+.signin-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: none;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.signin-header {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #4169e1, #9966cc, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.signin-box {
+  background: rgb(160, 160, 185);
+  padding: 20px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0px 0px 0.5px #333;
+}
+
+.signin-title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.signin-label {
+  margin-top: 15px;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+.signin-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+.signin-input:focus {
+  outline: none;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #ffd700;
+  cursor: pointer;
+}
+
+.signin-button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background: #ffd700;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.signin-button:hover {
+  background: #9966cc;
+}
+
+.signin-terms {
+  font-size: 0.8rem;
+  color: #dcdcdc;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.signin-help {
+  font-size: 0.9rem;
+  color: #00ffff;
+  text-align: center;
+  display: block;
+  margin-top: 10px;
+}
+
+.signin-create-account {
+  margin-top: 15px;
+  color: #ffd700;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.signin-footer {
+  margin-top: 20px;
+  text-align: center;
+  color: #dcdcdc;
+  font-size: 0.8rem;
+}

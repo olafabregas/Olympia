@@ -1,12 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { getMovies } from "../redux/movieSlice";
+import "../styles/Category.css";
 
-const Category = (props) => {
+const Category = ({ category, movies }) => {
   const navigate = useNavigate();
-  const dispatch = useAppDispatch();
-  const movie = useAppSelector((state) => state.movie.data);
+  const scrollRef = useRef(null);
 
   const detailsNavigate = (data) => {
     navigate("/details", {
@@ -14,46 +12,70 @@ const Category = (props) => {
     });
   };
 
-  useEffect(() => {
-    dispatch(getMovies());
-  }, [dispatch]);
+  const scrollRight = () => {
+    scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
+  };
+
+  const scrollLeft = () => {
+    scrollRef.current.scrollBy({ left: -300, behavior: "smooth" });
+  };
 
   return (
-    <div className="category-container bg-gray-900 p-6 rounded-lg">
+    <div className="category-container">
       {/* Header */}
-      <div className="flex items-center mb-6">
-        <h1 className="text-blue-500 font-bold text-2xl">Olympia</h1>
-        <h2 className="text-white font-medium text-xl ml-4">
-          {props.category} Movies
-        </h2>
+      <div className="category-header">
+        <h1 className="olympia-title">Olympia</h1>
+        <h2 className="category-title">{category} Movies</h2>
       </div>
 
-      {/* Movie List */}
-      <div className="flex gap-6 overflow-x-auto no-scrollbar">
-        {movie?.results?.length > 0 ? (
-          movie.results.map((data) => (
-            <div
-              key={data.id}
-              className="movie-card cursor-pointer flex-shrink-0 w-56"
-              onClick={() => detailsNavigate(data)}
-            >
-              <img
-                src={
-                  data?.poster_path
-                    ? `https://image.tmdb.org/t/p/w500${data.poster_path}`
-                    : "https://via.placeholder.com/500x750?text=No+Image"
-                }
-                alt={`${data.title || "Movie"} poster`}
-                className="w-full h-72 rounded-lg object-cover hover:opacity-90"
-              />
-              <p className="text-white mt-2 text-center font-medium">
-                {data.title || "Untitled"}
-              </p>
-            </div>
-          ))
-        ) : (
-          <p className="text-gray-400 text-center">No movies available.</p>
-        )}
+      {/* Movie List with Navigation */}
+      <div className="category-content">
+        {/* Left Scroll Button */}
+        <button className="scroll-button left" onClick={scrollLeft}>
+          &lt;
+        </button>
+
+        {/* Movie List */}
+        <div
+          className="movie-list"
+          ref={scrollRef}
+          style={{ position: "relative" }}
+        >
+          {movies.length > 0 ? (
+            movies.map((data) => (
+              <div
+                key={data.id}
+                className="movie-card"
+                onClick={() => detailsNavigate(data)}
+              >
+                <div className="poster-container">
+                  <img
+                    src={
+                      data?.poster_path
+                        ? `https://image.tmdb.org/t/p/w500${data.poster_path}`
+                        : "https://via.placeholder.com/500x750?text=No+Image"
+                    }
+                    alt={`${data.title || "Movie"} poster`}
+                    className="movie-poster"
+                  />
+                </div>
+                <div className="movie-details">
+                  <p className="movie-title">{data.title || "Untitled"}</p>
+                  <p className="movie-rating">
+                    Rating: {data.vote_average || "N/A"}
+                  </p>
+                </div>
+              </div>
+            ))
+          ) : (
+            <p className="no-movies">No movies available.</p>
+          )}
+        </div>
+
+        {/* Right Scroll Button */}
+        <button className="scroll-button right" onClick={scrollRight}>
+          &gt;
+        </button>
       </div>
     </div>
   );

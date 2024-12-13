@@ -1,0 +1,171 @@
+/* Category Container */
+.category-container {
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.1); /* Light translucent background */
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  color: white;
+  position: relative;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.olympia-title {
+  color: #3b82f6; /* Blue */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.category-title {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+  font-weight: medium;
+  color: white;
+}
+
+/* Category Content */
+.category-content {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Movie List */
+.movie-list {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+  flex: 1;
+}
+
+.movie-list::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+/* Scroll Buttons */
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.scroll-button:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+  transform: scale(1.1); /* Subtle hover effect */
+}
+
+.scroll-button.left {
+  left: 0.5rem; /* Positioned at the edge of the movie list */
+}
+
+.scroll-button.right {
+  right: 0.5rem; /* Positioned at the edge of the movie list */
+}
+
+/* Movie List */
+.movie-list {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+  position: relative; /* To keep buttons aligned within the container */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .scroll-button {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+}
+
+.movie-card {
+  flex-shrink: 0;
+  width: 180px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05); /* Smooth zoom effect */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4); /* Elevated hover */
+}
+
+/* Poster Container */
+.poster-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.movie-poster {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.movie-card:hover .movie-poster {
+  transform: scale(1.1);
+}
+
+/* Movie Details */
+.movie-details {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.movie-card:hover .movie-details {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.movie-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.movie-rating {
+  font-size: 0.9rem;
+  color: #fbbf24; /* Yellow for stars */
+}
+
+/* No Movies Message */
+.no-movies {
+  color: gray;
+  text-align: center;
+  font-size: 1rem;
+}

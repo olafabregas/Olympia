@@ -6,6 +6,7 @@ import movie from "../Assets/movie.png";
 import { auth } from "../Components/firebase/setup";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "../Footer";
 
 const Details = () => {
   const navigate = useNavigate();
@@ -21,10 +22,11 @@ const Details = () => {
 
   return (
     <>
-      <ToastContainer autoClose={2000} />
       <Navbar />
+
+      <ToastContainer autoClose={2000} />
       <div
-        className="details-container h-screen w-full text-white pl-16 pt-20"
+        className="details-container h-screen w-full text-white pl-16 pt-20 mt-[15vh]"
         style={{
           backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)), 
             url(https://image.tmdb.org/t/p/w1280${location?.state?.data?.poster_path})`,
@@ -66,6 +68,8 @@ const Details = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };

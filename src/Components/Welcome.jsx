@@ -15,7 +15,7 @@ const Welcome = () => {
   console.log(movie);
 
   return (
-    <div className="bg-black grid grid-cols-2 w-screen text-white">
+    <div className="bg-black grid grid-cols-2 w-screen text-white mt-[15vh]">
       <div className="p-8">
         <h1 className="text-4xl bg-gradient-to-r from-blue-700 via-purple-700 to-yellow-400 bg-clip-text text-transparent mt-4">
           Welcome to Olympia:<br></br>

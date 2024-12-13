@@ -1,0 +1,177 @@
+/* Feedback Form Container */
+.feedback-form {
+  background: rgba(26, 26, 26, 0.9); /* Semi-transparent dark background */
+  color: #ffffff; /* White text for contrast */
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Enhanced shadow for cinematic effect */
+  width: 90%;
+  max-width: 600px;
+  margin: 50px auto;
+  animation: 3s infinite ease-out; /* Fade-in effect */
+  position: relative;
+  border: 4px solid linear-gradient(45deg, #ffd700, #4169e1, #9966cc, #00ffff);
+  margin-top: 15vh; 
+}
+/* Header Style */
+.feedback-form h2 {
+  color: #00ffff; /* Gold for headers */
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 6px #4169e1; /* Glow effect */
+  animation: textGlow 3s infinite alternate; /* Glowing text animation */
+}
+
+/* Error Message */
+.feedback-form p {
+  color: #ff0000; /* Red for error messages */
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Feedback Textarea */
+.feedback-form textarea {
+  background-color: rgba(26, 26, 26, 0.8); /* Match form background */
+  color: #ffffff;
+  border: 2px solid #9966cc; /* Amethyst border */
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  width: 100%;
+  transition: border-color 0.3s, transform 0.2s;
+}
+
+.feedback-form textarea:focus {
+  outline: none;
+  border-color: #00ffff; /* Gold border on focus */
+  transform: scale(1.02); /* Slight scaling effect */
+}
+
+/* Email Input Field */
+.feedback-form input[type="email"] {
+  background-color: rgba(26, 26, 26, 0.8);
+  color: #ffffff;
+  border: 2px solid #9966cc;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  width: 100%;
+  transition: border-color 0.3s, transform 0.2s;
+}
+
+.feedback-form input[type="email"]:focus {
+  outline: none;
+  border-color: #00ffff;
+  transform: scale(1.02); /* Slight scaling effect */
+}
+
+/* Submit Button */
+.feedback-form button {
+  background-color: #4169e1; /* Gradient background */
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.feedback-form button:hover {
+  background-color: #9966cc;
+  transform: scale(1.05);
+  color: #00ffff; /* Hover scaling effect */
+}
+
+.feedback-form button:focus {
+  outline: none;
+  box-shadow: 0 0 10px #00ffff; /* Neon Cyan glow */
+}
+
+/* Label Styling */
+.feedback-form label {
+  display: block;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* Background Styling */
+/* Updated Background Styling */
+body {
+  background: linear-gradient(135deg, #1a1a1a, #000000);
+  background-size: cover, cover; /* Cover both the gradient and texture */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffffff;
+  animation: subtleScroll 30s linear infinite; /* Subtle scrolling animation */
+}
+
+/* Subtle Scroll Animation */
+@keyframes subtleScroll {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes textGlow {
+  from {
+    text-shadow: 1px 1px 6px #00ffff;
+  }
+  to {
+    text-shadow: 1px 1px 12px #ffd700;
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    border-image: linear-gradient(45deg, #ffd700, #4169e1, #9966cc, #00ffff);
+  }
+  50% {
+    border-image: linear-gradient(45deg, #00ffff, #9966cc, #ffd700, #4169e1);
+  }
+  100% {
+    border-image: linear-gradient(45deg, #4169e1, #ffd700, #00ffff, #9966cc);
+  }
+}
+
+/* Animated Border */
+.feedback-form {
+  animation: colorChange 5s infinite alternate;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .feedback-form {
+    padding: 15px;
+  }
+
+  .feedback-form h2 {
+    font-size: 1.5rem;
+  }
+
+  .feedback-form button {
+    font-size: 1rem;
+  }
+}

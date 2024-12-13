@@ -1,0 +1,63 @@
+.thank-you-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.8)
+      ),
+      url('/public/cine1.jpeg') no-repeat center/cover;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .thank-you-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 40px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .thank-you-header {
+    font-size: 2.5rem;
+    background: linear-gradient(90deg, #4169e1, #9966cc, #ffd700);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  .thank-you-message {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .thank-you-message-secondary {
+    font-size: 1rem;
+    color: #dcdcdc;
+    margin-bottom: 30px;
+  }
+  
+  .thank-you-button {
+    background-color: #ffd700;
+    color: #000;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+  }
+  
+  .thank-you-button:hover {
+    background-color: #ffca28;
+    transform: scale(1.1);
+  }
+  

@@ -13,6 +13,7 @@ body {
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  margin-top: 15vh;
 }
 
 .policy-item {
@@ -46,7 +47,7 @@ body {
 }
 
 .policy-title i {
-  margin-right: 10px;
+  margin-right: 100px;
   color: #00ffff; /* Jet Black for icon contrast */
 }
 

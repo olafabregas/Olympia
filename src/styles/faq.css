@@ -13,6 +13,7 @@ body {
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  margin-top: 15vh;
 }
 
 .faq-item {
@@ -20,7 +21,7 @@ body {
   border-bottom: 1px solid #9966cc; /* Amethyst for accents */
   padding-bottom: 10px;
 }
-    
+
 .faq-item:last-child {
   border-bottom: none;
 }
@@ -41,23 +42,23 @@ body {
 }
 
 .question:hover {
-  background-color: #9966cc; 
+  background-color: #9966cc;
   transform: scale(1.02);
 }
 
 .question i {
   margin-right: 10px;
-  color: #1a1a1a; 
+  color: #1a1a1a;
 }
 
 /* Answer Styling */
 .answer {
   margin-top: 10px;
   padding: 15px;
-  border: 2px solid #9966cc; 
+  border: 2px solid #9966cc;
   border-radius: 6px;
-  background-color: #1a1a1a; 
-  color: #dcdcdc; 
+  background-color: #1a1a1a;
+  color: #dcdcdc;
   line-height: 1.5;
   animation: fadeIn 0.5s ease-in-out;
 }

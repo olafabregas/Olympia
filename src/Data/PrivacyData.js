@@ -2,8 +2,16 @@ const privacyData = [
   {
     title: "Introduction",
     icon: "fas fa-lock",
-    content:
-      'Welcome to Olympia: Your Gateway to the World of Cinema. We are committed to safeguarding your personal data and ensuring that your privacy is respected. This privacy policy outlines how we collect, use, and protect your information when you use our platform. If you have any questions or concerns, please contact us at <a href="mailto:privacy@olympia.com">privacy@olympia.com</a>.',
+    content: (
+      <>
+        'Welcome to Olympia: Your Gateway to the World of Cinema. We are
+        committed to safeguarding your personal data and ensuring that your
+        privacy is respected. This privacy policy outlines how we collect, use,
+        and protect your information when you use our platform. If you have any
+        questions or concerns, please contact us at{" "}
+        <a href="mailto:privacy@olympia.com">privacy@olympia.com</a>.',
+      </>
+    ),
   },
   {
     title: "What Data We Collect",
